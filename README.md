@@ -112,3 +112,86 @@ This project demonstrates end-to-end Arabic text regression using deep learning.
 - Use a larger real-world dataset with labeled scores
 - Fine-tune Arabic pretrained models (e.g., AraBERT)
 - Try transformers for improved results
+
+
+
+
+
+
+
+---
+
+## 🧠 GPT-2 Fine-Tuning on Arabic Text (Colab)
+
+This project demonstrates how to fine-tune the pre-trained [GPT-2 language model](https://huggingface.co/gpt2) using Arabic text data from the [OSCAR](https://huggingface.co/datasets/oscar) dataset.
+
+### 🚀 What this notebook does:
+
+- Loads a small Arabic text dataset (1000 samples) for fast training
+- Tokenizes the text using the GPT-2 tokenizer
+- Fine-tunes the GPT-2 model for 1 epoch using Hugging Face's `Trainer`
+- Generates new Arabic text from a custom prompt
+
+---
+
+### 📚 Dataset
+
+- **Source**: [OSCAR](https://huggingface.co/datasets/oscar)
+- **Subset**: `unshuffled_deduplicated_ar`
+- **Sample size**: 1000 Arabic text examples
+- The data is filtered to remove short or empty lines for quality
+
+---
+
+### 🛠️ Libraries Used
+
+- [Transformers](https://huggingface.co/docs/transformers/index) by Hugging Face
+- [Datasets](https://huggingface.co/docs/datasets/index) by Hugging Face
+- PyTorch (via `transformers` backend)
+- Google Colab as the development environment
+
+---
+
+### 📦 How to Run
+
+1. Open the notebook in Google Colab
+2. Install required libraries:
+   ```bash
+   !pip install transformers datasets
+   ```
+3. Run each cell to:
+   - Load and tokenize the dataset
+   - Fine-tune the model on Arabic text
+   - Generate new Arabic sentences from a custom prompt
+
+---
+
+### ✨ Example Output
+
+Prompt:
+```
+الذكاء الاصطناعي هو
+```
+
+Generated text:
+```
+الذكاء الاصطناعي هو من أهم التقنيات التي تساعد على تطوير الخدمات وتحسين جودة الحياة في العالم الحديث...
+```
+
+---
+
+### 🧠 Notes
+
+- This is a lightweight demo intended for educational purposes.
+- GPT-2 was originally trained on English text. For serious Arabic NLP applications, consider using models pre-trained on Arabic like [AraGPT2](https://huggingface.co/aubmindlab/aragpt2-mega).
+
+---
+
+### 📁 Output
+
+- Fine-tuned model saved to: `./gpt2_arabic_demo/`
+- Can be reused for further training or inference
+
+---
+
+
